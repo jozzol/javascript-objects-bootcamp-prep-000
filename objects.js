@@ -31,7 +31,7 @@ function destructivelyUpdateObjectWithKeyAndValue(obj, key, value){
   obj[key] = value
   return obj
 }
-const recipe = {egs: 3}
+const recipe = {eggs: 3}
 destructivelyUpdateObjectWithKeyAndValue(recipe, "flour", "3 cups")
 //returns {eggs: 3, flour: "3 cups"}
 //but also:
@@ -46,3 +46,8 @@ function updateObjectWithKeyAndValue(obj, key, value) {
 
 updateObjectWithKeyAndValue(recipe, "chocolate", "1 cup") // returns { eggs: 3, chocolate: "1 cup"}
 recipe // { eggs: 3 }
+
+var playlist = {music: "rock"}
+function updatePlaylist(playlist, artist, song){
+  return Object.assig(playlist, {[artist]: song})
+}
