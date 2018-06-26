@@ -42,4 +42,7 @@ Object.assign({ eggs: 3}, {chocolate: "1 cup", flour: "2 cups"}, {flour: "1/2 cu
 function updateObjectWithKeyAndValue(obj, key, value) {
   return Object.assign({}, obj, {[key]: value})
 }
-// it´s important that we merge everything into a new object such as the empty{} otherwise, the object obj will be modified. Test what happens if this line was written as: return Object. assig
+// it´s important that we merge everything into a new object such as the empty{} otherwise, the object obj will be modified. Test what happens if this line was written as: return Object.assign(obj, { [key]: value })
+
+updateObjectWithKeyAndValue(recipe, "chocolate", "1 cup") // returns { eggs: 3, chocolate: "1 cup"}
+recipe // { eggs: 3 }
