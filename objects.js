@@ -26,3 +26,20 @@ var sweetMeal = "dessert"
 meals[sweetMeal] = "cake";
 meals.dessert // "cake"
 meals[sweetMeal] // "cake"
+meals.breakfast = "cereal";
+function destructivelyUpdateObjectWithKeyAndValue(obj, key, value){
+  obj[key] = value
+  return obj
+}
+const recipe = {egs: 3}
+destructivelyUpdateObjectWithKeyAndValue(recipe, "flour", "3 cups")
+//returns {eggs: 3, flour: "3 cups"}
+//but also:
+recipe // {eggs: 3, flour: "3 cups"}
+Object.assign({}, { foo: "bar"}) // { foo: "bar"}
+Object.assign({ eggs: 3}, {flour: "1 cup"})// { eggs: 3, flour: "1 cup"}
+Object.assign({ eggs: 3}, {chocolate: "1 cup", flour: "2 cups"}, {flour: "1/2 cup"}) // { eggs: 3, chocolate: "1 cup", flour: "1/2 cup"}
+function updateObjectWithKeyAndValue(obj, key, value) {
+  return Object.assign({}, obj, {[key]: value})
+}
+// it´s important that we merge everything into a new object such as the empty{} otherwise, the object obj will be modified. Test what happens if this line was written as: return Object. assig
